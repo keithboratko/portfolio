@@ -1,0 +1,272 @@
+body {
+    background-color: hsl(0, 0%, 8%);
+    color: white;
+    font-family: Space Grotesk;
+    display: flex;
+    justify-content: center;
+    scroll-behavior: smooth;
+
+}
+
+h1 {
+    font-size: 3em;;
+}
+
+.small {
+    font-size: .75em;
+    color: hsl(0, 0%, 85%);
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    /* border: 1px solid white; */
+    padding: 0 2.5em;
+    min-height: 100vh;
+    max-width: 700px;
+}
+
+/* .wrapper > * {
+    border: 1px solid white;
+} */
+
+.top-banner-wrap {
+    background-image: url(assets/images/image-profile-desktop.webp);
+    background-size: 19em;
+    background-repeat: no-repeat;
+    background-position: right top;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+svg {
+    scale: 75%;
+    padding: .25em;
+    cursor: pointer;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.callout {
+    display: flex;
+    padding-bottom: 5em;
+    border-bottom: 1px solid hsl(0, 0%, 85%);
+}
+
+.callout-wrap {
+    width: 75%;
+}
+
+.callout-wrap h1 {
+    background-image: url(assets/images/pattern-rings.svg);
+    background-size: 10em;
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-position-x: -3em;
+    padding-left: 80px;
+    margin-left: -80px;
+}
+
+.callout-wrap p {
+    width: 75%;
+    padding-bottom: 6em;
+}
+
+.callout-wrap button {
+    margin-bottom: 6em;
+}
+
+.name {
+    border-bottom: 3px solid hsl(153, 71%, 59%);
+}
+
+.banner-inner-wrapper {
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+    max-height: 100%;
+    align-items: center;
+
+}
+
+.banner-inner-wrapper img {
+    scale: 75%;
+}
+
+.experience {
+    min-height: 300px;
+    padding-top: 3em;
+}
+
+/* .experience > * {
+    border: 1px solid white;
+} */
+
+
+.item {
+    width: calc(33.3333% - 2px);
+    height: fit-content;
+    padding-bottom: 3em;
+}
+
+.item6 {
+    background-image: url(assets/images/pattern-rings.svg);
+    background-repeat: no-repeat;
+    background-size: 25em;
+    background-position: bottom right;
+    background-position-x: 10em;
+    padding-right: 80px;
+    margin-right: -80px;
+}
+
+.title {
+    font-size: 2em;
+    font-weight: 500;
+    padding-bottom: .5em;
+}
+
+.projects {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.project-banner {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    max-height: 100%;
+    align-items: center;
+}
+
+.project-banner button {
+    margin-right: 2em;
+    height: fit-content;
+}
+
+.project {
+    width: 45%;
+    min-height: 10em;
+    padding-bottom: 3em;
+}
+
+.project > * {
+    padding: .25em 0;
+}
+
+
+.project img {
+    z-index: 1;
+    max-width: 100%;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+.project img:hover {
+    opacity: 50%;
+}
+
+.project-title {
+    font-size: 1.25em;
+    font-weight: 500;
+}
+
+.project button {
+    margin: 0 1em;
+}
+
+.specs {
+    word-spacing: 1em;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+button {
+    background: none;
+    border: none;
+    border-bottom: 1px solid hsl(153, 71%, 59%);
+    color: white;
+    text-transform: uppercase;
+    padding-bottom: .45em;
+    cursor: pointer;
+}
+
+.contact {
+    display: flex;
+    flex-direction: row;
+    min-height: 300px;
+    padding-bottom: 3em;
+    border-bottom: 1px solid hsl(0, 0%, 85%)
+}
+
+.contact > * {
+    width: calc(50% - 2px);;
+}
+
+.prompt {
+    width: 80%;
+    line-height: 2em;
+    text-align: justify;
+}
+
+.input-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.input-wrapper > * {
+    margin: 1em 0;
+
+}
+
+.input-wrapper input {
+    background: none;
+    border: none;
+    border-bottom: 1px solid hsl(0, 0%, 85%);
+    color: hsl(0, 0%, 85%);
+    text-transform: uppercase;
+    padding:.5em;
+    width: 90%;
+}
+
+.input-item {
+    width: 100%;
+    text-align: right;
+}
+
+.error-message {
+    color: red;
+    margin: 0;
+    padding-top: .5em;
+}
+
+.input-wrapper button {
+    width: fit-content;
+}
+
+.bottom-wrapper {
+    background-color: hsl(0, 0%, 14%);
+    background-image: url(assets/images/pattern-rings.svg);
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-position-x: -150px;
+    background-position-y: 225px;
+    background-size: 20em;
+    margin: 0 -80px;
+    padding: 0 80px;
+}
+
+.navbar-bottom {
+    padding-top: 1em;
+}
