@@ -76,7 +76,6 @@ svg {
 
 .callout-wrap p {
     width: 75%;
-    padding-bottom: 6em;
 }
 
 .callout-wrap button {
@@ -190,14 +189,13 @@ svg {
     visibility: hidden;
 }
 
-button {
-    background: none;
-    border: none;
+a {
+    text-decoration: none;
     border-bottom: 1px solid hsl(153, 71%, 59%);
     color: white;
     text-transform: uppercase;
     padding-bottom: .45em;
-    cursor: pointer;
+    margin-right: 1em;
 }
 
 .contact {
@@ -209,7 +207,7 @@ button {
 }
 
 .contact > * {
-    width: calc(50% - 2px);;
+    width: calc(50% - 2px);
 }
 
 .prompt {

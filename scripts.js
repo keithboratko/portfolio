@@ -1,13 +1,13 @@
 function projectSelect() {
   document.querySelectorAll(".project").forEach((project) => {
     project.addEventListener("mouseover", () => {
-      project.querySelectorAll("button").forEach((button) => {
-        button.classList.remove("hidden");
+      project.querySelectorAll("a").forEach((link) => {
+        link.classList.remove("hidden");
       });
     });
     project.addEventListener("mouseout", () => {
-      project.querySelectorAll("button").forEach((button) => {
-        button.classList.add("hidden");
+      project.querySelectorAll("a").forEach((link) => {
+        link.classList.add("hidden");
       });
     });
   });
