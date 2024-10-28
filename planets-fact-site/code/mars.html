@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  
+  <link rel="stylesheet" href="styles.css">
+  <script src="scripts.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
+  
+  <title>Frontend Mentor | Planets fact site</title>
+</head>
+<body class="mars">
+  <div class="wrap-wrap">
+    <div class="wrapper main-flex-wrapper">
+      <div class="wrapper navbar">
+        <div class="navbar-item"><button class="home-button">The Planets</button></div>
+        <button class="mobile-menu-button"></button>
+        <div class="navbar-item planet-buttons">
+          <a href="index.html"><button class="planet-button mercury">Mercury</button></a>
+          <a href="venus.html"><button class="planet-button venus">Venus</button></a>
+          <a href="earth.html"><button class="planet-button earth">Earth</button></a>
+          <a href="mars.html"><button class="planet-button mars">Mars</button></a>
+          <a href="jupiter.html"><button class="planet-button jupiter">Jupiter</button></a>
+          <a href="saturn.html"><button class="planet-button saturn">Saturn</button></a>
+          <a href="uranus.html"><button class="planet-button uranus">Uranus</button></a>
+          <a href="neptune.html"><button class="planet-button neptune">Neptune</button></a>
+        </div>
+      </div>
+      <div class="mobile-planet-menu">
+        <div class="mobile-planet">
+          <div class="mobile-planet-info">
+            <div class="mobile-circle mercury-circle"></div>
+            <a href="index.html">
+              <button class="mobile-planet-name">Mercury</button>
+            </a>
+          </div>
+          <div class="arrow-container"></div>
+        </div>
+        <div class="mobile-planet">
+          <div class="mobile-planet-info">
+            <div class="mobile-circle venus-circle"></div>
+            <a href="venus.html">
+              <button class="mobile-planet-name">Venus</button>
+            </a>
+          </div>
+          <div class="arrow-container"></div>
+        </div>
+        <div class="mobile-planet">
+          <div class="mobile-planet-info">
+            <div class="mobile-circle earth-circle"></div>
+            <a href="earth.html">
+              <button class="mobile-planet-name">Earth</button>
+            </a>
+          </div>
+          <div class="arrow-container"></div>
+        </div>
+        <div class="mobile-planet">
+          <div class="mobile-planet-info">
+            <div class="mobile-circle mars-circle"></div>
+            <a href="mars.html">
+              <button class="mobile-planet-name">Mars</button>
+            </a>
+          </div>
+          <div class="arrow-container"></div>
+        </div>
+        <div class="mobile-planet">
+          <div class="mobile-planet-info">
+            <div class="mobile-circle jupiter-circle"></div>
+            <a href="jupiter.html">
+              <button class="mobile-planet-name">Jupiter</button>
+            </a>
+          </div>
+          <div class="arrow-container"></div>
+        </div>
+        <div class="mobile-planet">
+          <div class="mobile-planet-info">
+            <div class="mobile-circle saturn-circle"></div>
+            <a href="saturn.html">
+              <button class="mobile-planet-name">Saturn</button>
+            </a>
+          </div>
+          <div class="arrow-container"></div>
+        </div>
+        <div class="mobile-planet">
+          <div class="mobile-planet-info">
+            <div class="mobile-circle uranus-circle"></div>
+            <a href="uranus.html">
+              <button class="mobile-planet-name">Uranus</button>
+            </a>
+          </div>
+          <div class="arrow-container"></div>
+        </div>
+        <div class="mobile-planet">
+          <div class="mobile-planet-info">
+            <div class="mobile-circle neptune-circle"></div>
+            <a href="neptune.html">
+              <button class="mobile-planet-name">Neptune</button>
+            </a>
+          </div>
+          <div class="arrow-container"></div>
+        </div>
+      </div>
+      <div class="wrapper main-content-wrapper">
+        <div class="image-container">
+          <img class="planet-image" src="assets/planet-mars.svg">
+          <img class="geology hidden-image" src="assets/geology-mars.png">
+        </div>
+    
+        <div class="content-info">
+          <div class="planet-name">Mars</div>
+          <!-- Overview Content Start -->
+          <div class="content one">
+            Mars is the fourth planet from the Sun and the second-smallest planet
+                  in the Solar System, being larger than only Mercury. In English, Mars
+                  carries the name of the Roman god of war and is often referred to as
+                  the "Red Planet".
+                  <div class="source-link">Source : <a class="wiki-link" href="https://en.wikipedia.org/wiki/Mars">Wikipedia<img class="source-arrow" src="assets/icon-source.svg"/></a></div>
+          </div>
+          <!-- Overview Content End -->
+          <!-- Internal Structure Content Start -->
+          <div class="content hidden two">
+            Like Earth, Mars has differentiated into a dense metallic core overlaid
+                  by less dense materials. Scientists initially determined that the core
+                  is at least partially liquid. Current models of its interior imply a
+                  core consisting primarily of iron and nickel with about 16–17% sulfur.
+                  <div class="source-link">Source : <a class="wiki-link" href="https://en.wikipedia.org/wiki/Mars#Internal_structure">Wikipedia<img class="source-arrow" src="assets/icon-source.svg"/></a></div>
+          </div>
+          <!-- Internal Structure Content End -->
+          <!-- Surface Geology Content Start -->
+          <div class="content hidden three">
+            Mars is a terrestrial planet whose surface consists of minerals containing
+                  silicon and oxygen, metals, and other elements that typically make up rock.
+                  The surface is primarily composed of tholeiitic basalt, although parts are
+                  more silica-rich than typical basalt.
+                  <div class="source-link">Source : <a class="wiki-link" href="https://en.wikipedia.org/wiki/Mars#Surface_geology">Wikipedia<img class="source-arrow" src="assets/icon-source.svg"/></a></div>
+          </div>
+        </div>
+        <!-- Surface Geology Content End -->
+        <div class="content-buttons">
+          <button class="category-button active one"><span class="category-number">01</span> Overview</button>
+          <button class="category-button two"><span class="category-number">02</span>  Internal Structure</button>
+          <button class="category-button three"><span class="category-number">03</span>  Surface Geology</button>
+        </div>
+      </div>
+      <div class="wrapper facts-wrapper">
+        <div class="fact-item">
+          <div class="fact-title">Rotation Time</div>
+          <div class="fact-info">1.03 Days</div>
+        </div>
+        <div class="fact-item">
+          <div class="fact-title">Revolution Time</div>
+          <div class="fact-info">1.88 Years</div>
+        </div>
+        <div class="fact-item">
+          <div class="fact-title">Radius</div>
+          <div class="fact-info">3,389.5 KM</div>
+        </div>
+        <div class="fact-item">
+          <div class="fact-title">Average Temp.</div>
+          <div class="fact-info">-28°c</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

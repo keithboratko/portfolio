@@ -1,0 +1,612 @@
+/* 
+*
+*
+*
+
+Variables 
+
+*
+*
+*
+*/
+
+
+
+:root {
+    --bg-main: hsl(202, 32%, 15%);
+    --box-dark: hsl(199, 35%, 19%);
+    --box-dark-shadow: hsl(199, 35%, 9%);
+    --box-med: hsl(198, 23%, 72%);
+    --box-med-shadow: hsl(198, 23%, 35%);
+    --box-light: hsl(197, 33%, 89%);
+    --box-light-shadow: hsl(197, 33%, 69%);
+    --x-blue: hsl(178, 60%, 48%);
+    --x-blue-shadow: hsl(178, 60%, 29%);
+    --x-blue-active: hsl(178, 75%, 65%);
+    --o-yellow: hsl(39, 88%, 58%);
+    --o-yellow-active: hsl(39, 100%, 69%);
+    --o-yellow-shadow: hsl(39, 88%, 29%);
+}
+
+
+/* 
+*
+*
+*
+
+Generic Styles
+
+*
+*
+*
+ */
+
+
+
+body {
+    background-color: var(--bg-main);
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    font-family: Outfit;
+    text-transform: uppercase;
+}
+
+button {
+    font-family: Outfit;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: .05em;
+}
+
+
+/* 
+*
+*
+*
+
+Containers 
+
+*
+*
+*
+*/
+
+
+
+.main-wrapper {
+    /* border: 1px solid white; */
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: space-around;
+}
+
+.new-game-menu, .menu-item {
+    flex-direction: column;
+    align-items: center;
+}
+
+.new-game-menu {
+    width: 360px;
+    height: 400px;
+    /* border: 1px solid white; */
+    display: none;
+
+}
+
+.image-container {
+    /* margin: -3em 0 -6em 0; */
+    text-align: center;
+    height: 10%;
+    /* border: 1px solid white; */
+}
+
+.menu-item {
+    width: 100%;
+}
+
+/* .banner-logo-container {
+    display: flex;
+} */
+
+.restart-button-container {
+    display: flex;
+    justify-content: flex-end;
+}
+.game-board {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* border: 1px solid white; */
+    width: 360px;
+    height: 667px;
+}
+
+.end-of-round {
+    display: none;
+}
+
+/* .opponent-choice-buttons {
+    flex-direction: row;
+} */
+
+.top-banner {
+    align-items: center;
+    justify-content: space-between;
+}
+
+.top-banner > * {
+    /* border: 1px solid white; */
+    flex: 1 1 33.3333%;
+}
+
+.bottom-banner {
+    /* border: 1px solid white; */
+    display: flex;
+    /* align-items: center; */
+    height: 10%;
+    justify-content: space-around;
+}
+
+.bottom-banner > * {
+    /* border: 1px solid white; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1 33.3333%;
+    border-radius: 10px;
+    margin: .25em;
+    color: var(--box-dark);
+}
+
+.restart-menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+
+.restart-menu-buttons-container {
+    display: flex;
+    width: 30vw;
+    justify-content: space-between;
+}
+/* .restart-menu > * {
+    padding: 1em;
+    border: 1px solid white;
+} */
+
+.end-of-round {
+    display: none;
+    flex-direction: column;
+    /* border: 1px solid white; */
+    width: 100%;
+    height: 25%;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0 0 -100%;
+    z-index: 2;
+    background-color: var(--bg-main);
+}
+
+.end-of-round > * {
+    /* border: 1px solid white; */
+    padding: 1em;
+}
+
+.round-decision-buttons-container {
+    /* border: 1px solid white; */
+    display: flex;
+    width: 30vw;
+    justify-content: space-between;
+}
+
+.loss {
+    display: none;
+}
+
+.win {
+    display: none;
+}
+
+.player-win {
+    display: none;
+}
+
+.decision-item {
+    display: none;
+}
+
+/* 
+*
+*
+*
+
+Specific Styles 
+
+*
+*
+*
+*/
+
+
+
+.team-choice {
+    /* border: 1px solid white; */
+    height: 40%;
+    border-radius: 10px;
+    background-color: var(--box-dark);
+    box-shadow: 0px 5px 0px 0px var(--box-dark-shadow);
+    color: var(--box-med);
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: .05em;
+}
+
+.team-choice-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:.5em;;
+    width: 80%;
+    height: 20%;
+    background-color: var(--bg-main);
+    border-radius: 10px;
+    /* border: 1px solid white; */
+}
+
+.team-button {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    background-color: var(--bg-main);
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    
+}
+
+.team-button:hover {
+    background-color: var(--box-dark);
+}
+
+.team-x {
+    background: url(assets/icon-x.svg);
+    /* border: 1px solid black; */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 15%;
+}
+
+.team-o {
+    background: url(assets/icon-o.svg);
+    /* border: 1px solid black; */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 15%;
+}
+
+.active {
+    background-color: var(--box-med);
+}
+
+.active:hover {
+    background-color: var(--box-med);
+}
+
+.team-button-image {
+    height: 80%;
+    /* border: 1px solid red; */
+}
+
+.opponent-choice {
+    width: 100%;
+    height: 30%;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    margin: 1em 0;
+
+    /* border: none; */
+}
+
+.opponent-active {
+    display: flex;
+}
+
+.opponent-choice-buttons {
+    justify-content: center;
+    height: 50%;
+}
+
+.cpu {
+    background-color: var(--o-yellow);
+    box-shadow: 0px 5px 0px 0px var(--o-yellow-shadow);
+}
+
+.cpu:hover {
+    background-color: var(--o-yellow-active);
+}
+
+.player {
+    background-color: var(--x-blue);
+    box-shadow: 0px 5px 0px 0px var(--x-blue-shadow);
+}
+
+.player:hover {
+    background-color: var(--x-blue-active);
+}
+
+.turn-container {
+    display: flex;
+    /* justify-content: space-around; */
+    align-items: center;
+    background-color: var(--box-dark);
+    height: 75%;
+    border-radius: 5px;
+    box-shadow: 0px 5px 0px 0px var(--box-dark-shadow);
+}
+
+.turn {
+    margin-left: -.5em;
+    color: var(--box-med);
+    font-weight: 600;
+}
+
+.turn-container > * {
+    /* border: 1px solid white; */
+    margin-left: -.5em;
+}
+
+.banner-logo {
+    margin-left: 1em;
+}
+
+.turn-logo {
+    scale: 30%;
+}
+
+.restart-button {
+    height: 3em;
+    width: 3em;
+    background-image: url(assets/icon-restart.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: 1em;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--box-med);
+    box-shadow: 0px 5px 0px 0px var(--box-med-shadow);
+    cursor: pointer;
+}
+
+.restart-button:hover {
+    background-color: var(--box-light);
+}
+
+.game-grid {
+    height: 60%;
+    justify-content: space-around;
+    align-items: space-around;
+    flex-wrap: wrap;
+}
+
+.game-box {
+    /* height: 33.3333%;
+    width: 33.3333%; */
+    /* border: 1px solid white; */
+    height: 30%;
+    flex: 1 1 33.3333%;
+    border-radius: 10px;
+    background-color: var(--box-dark);
+    box-shadow: 0px 5px 0px 0px var(--box-dark-shadow);
+    scale: 90%;
+}
+
+.game-box:hover {
+    cursor: pointer;
+    background-image: url(assets/icon-x-outline.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.x-turn:hover {
+    cursor: pointer;
+    background-image: url(assets/icon-x-outline.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.o-turn:hover {
+    cursor: pointer;
+    background-image: url(assets/icon-o-outline.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.x-filled {
+    background-image: url(assets/icon-x.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.o-filled {
+    background-image: url(assets/icon-o.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.item-text {
+    font-size: 14px;
+}
+
+.count {
+    font-weight: 700;
+    font-size: 20px;
+}
+.score-x-item {
+    background-color: var(--x-blue);
+    box-shadow: 0px 5px 0px 0px var(--x-blue-shadow);
+
+}
+
+.ties-item {
+    background-color: var(--box-med);
+    box-shadow: 0px 5px 0px 0px var(--box-med-shadow);
+
+}
+
+.score-o-item {
+    background-color: var(--o-yellow);
+    box-shadow: 0px 5px 0px 0px var(--o-yellow-shadow);
+
+}
+
+.decision-text {
+    color: var(--box-med);
+}
+
+.winning-team {
+    display: flex;
+    align-items: center;
+    font-size: 48px;
+    font-weight: 700;
+    letter-spacing: .05em;
+    color: var(--x-blue); /*This will be a functionality built into class "x-win"*/
+}
+
+.winning-team .image-container {
+    background-image: url(assets/icon-x.svg);
+    height: 1.5em;
+    width: 1.5em;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-right: .5em;
+}
+
+.tie-game {
+    display: none;
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--box-med);
+}
+
+.round-decision-buttons-container > *, .restart-menu-buttons-container > * {
+    flex-basis: 50%;
+    padding: .75em;
+    margin: -.75em;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.quit-button {
+    background-color: var(--box-med);
+    box-shadow: 0px 5px 0px 0px var(--box-med-shadow);
+}
+
+.quit-button:hover {
+    background-color: var(--box-light);
+
+}
+
+.next-round-button {
+    background-color: var(--o-yellow);
+    box-shadow: 0px 5px 0px 0px var(--o-yellow-shadow);
+}
+
+.next-round-button:hover {
+    background-color: var(--o-yellow-active);
+
+}
+
+.end-of-round .prompt {
+    font-size: 48px;
+    font-weight: 600;
+    padding-bottom: 1em;
+    color: var(--box-med);
+    letter-spacing: .05em;
+}
+
+.cancel {
+    background-color: var(--box-med);
+    box-shadow: 0px 5px 0px 0px var(--box-med-shadow);
+}
+
+.cancel:hover {
+    background-color: var(--box-light);
+}
+
+.confirm-restart {
+    background-color: var(--o-yellow);
+    box-shadow: 0px 5px 0px 0px var(--o-yellow-shadow);
+}
+
+.confirm-restart:hover {
+    background-color: var(--o-yellow-active);
+}
+/* 
+*
+*
+*
+
+Checks and Overrides 
+
+*
+*
+*
+*/
+
+
+
+/* .wrapper {
+    border: 1px solid white;
+} */
+
+.new-game-menu {
+    display: flex;
+}
+.game-board {
+    display: none;
+}
+.end-of-round {
+    display: none;
+}
+
+
+
+.loss {
+    display: none;
+}
+
+/* .player-win {
+    display: none;
+} */
+
+/* .decision-item {
+    display: none;
+} */
+
+
+/* Questions for Mike:
+
+- Re: logo colors needing to be light/dark grey:
+My thought is to create new logo svg files, copy-paste the link for an icon, and in the link, change the fill attribute to the needed value. I've found it hard to access that via JS or CSS.
+- Re: hover states: Because there are two different hover states (x-outline and o-outline), it would make sense to give each a separate CSS class, then assign that class on mouseover, and remove it on mouseout. But you mentioned that using CSS over Javascript is preferred whenever possible - from what I've seen, you can't access .active:hover, for example, with JS, so is there no other way than adding the JS events in this case.
+- Re: Having CPU move first if Player 1 is Team O. Had the idea to check if empty_boxes.length == 9, and if so, trigger the CPU move if Player 1 is Team O, otherwise, have Player 1 go first. Didn't work. Is that the right idea, though?
+- Win checks are hard coded right now. Is there a more efficient, dynamic way? Similar question regarding future implementations of CPU play where it checks for win and loss scenarios and fills a box accordingly.
+- WHY THE F**K is the main-wrapper element shifting to the left when end-of-round is set to flex???
+
+Inkscape - software that creates/edits .svg files, which have become all the more prominent and important to understand.
+
+*/

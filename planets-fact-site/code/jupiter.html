@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  
+  <link rel="stylesheet" href="styles.css">
+  <script src="scripts.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
+  
+  <title>Frontend Mentor | Planets fact site</title>
+</head>
+<body class="jupiter">
+  <div class="wrap-wrap">
+    <div class="wrapper main-flex-wrapper">
+      <div class="wrapper navbar">
+        <div class="navbar-item"><button class="home-button">The Planets</button></div>
+        <button class="mobile-menu-button"></button>
+        <div class="navbar-item planet-buttons">
+          <a href="index.html"><button class="planet-button mercury">Mercury</button></a>
+          <a href="venus.html"><button class="planet-button venus">Venus</button></a>
+          <a href="earth.html"><button class="planet-button earth">Earth</button></a>
+          <a href="mars.html"><button class="planet-button mars">Mars</button></a>
+          <a href="jupiter.html"><button class="planet-button jupiter">Jupiter</button></a>
+          <a href="saturn.html"><button class="planet-button saturn">Saturn</button></a>
+          <a href="uranus.html"><button class="planet-button uranus">Uranus</button></a>
+          <a href="neptune.html"><button class="planet-button neptune">Neptune</button></a>
+        </div>
+      </div>
+      <div class="mobile-planet-menu">
+        <div class="mobile-planet">
+          <div class="mobile-planet-info">
+            <div class="mobile-circle mercury-circle"></div>
+            <a href="index.html">
+              <button class="mobile-planet-name">Mercury</button>
+            </a>
+          </div>
+          <div class="arrow-container"></div>
+        </div>
+        <div class="mobile-planet">
+          <div class="mobile-planet-info">
+            <div class="mobile-circle venus-circle"></div>
+            <a href="venus.html">
+              <button class="mobile-planet-name">Venus</button>
+            </a>
+          </div>
+          <div class="arrow-container"></div>
+        </div>
+        <div class="mobile-planet">
+          <div class="mobile-planet-info">
+            <div class="mobile-circle earth-circle"></div>
+            <a href="earth.html">
+              <button class="mobile-planet-name">Earth</button>
+            </a>
+          </div>
+          <div class="arrow-container"></div>
+        </div>
+        <div class="mobile-planet">
+          <div class="mobile-planet-info">
+            <div class="mobile-circle mars-circle"></div>
+            <a href="mars.html">
+              <button class="mobile-planet-name">Mars</button>
+            </a>
+          </div>
+          <div class="arrow-container"></div>
+        </div>
+        <div class="mobile-planet">
+          <div class="mobile-planet-info">
+            <div class="mobile-circle jupiter-circle"></div>
+            <a href="jupiter.html">
+              <button class="mobile-planet-name">Jupiter</button>
+            </a>
+          </div>
+          <div class="arrow-container"></div>
+        </div>
+        <div class="mobile-planet">
+          <div class="mobile-planet-info">
+            <div class="mobile-circle saturn-circle"></div>
+            <a href="saturn.html">
+              <button class="mobile-planet-name">Saturn</button>
+            </a>
+          </div>
+          <div class="arrow-container"></div>
+        </div>
+        <div class="mobile-planet">
+          <div class="mobile-planet-info">
+            <div class="mobile-circle uranus-circle"></div>
+            <a href="uranus.html">
+              <button class="mobile-planet-name">Uranus</button>
+            </a>
+          </div>
+          <div class="arrow-container"></div>
+        </div>
+        <div class="mobile-planet">
+          <div class="mobile-planet-info">
+            <div class="mobile-circle neptune-circle"></div>
+            <a href="neptune.html">
+              <button class="mobile-planet-name">Neptune</button>
+            </a>
+          </div>
+          <div class="arrow-container"></div>
+        </div>
+      </div>
+      <div class="wrapper main-content-wrapper">
+        <div class="image-container">
+          <img class="planet-image" src="assets/planet-jupiter.svg">
+          <img class="geology hidden-image" src="assets/geology-jupiter.png">
+        </div>
+    
+        <div class="content-info">
+          <div class="planet-name">Jupiter</div>
+          <!-- Overview Content Start -->
+          <div class="content one">
+            Jupiter is the fifth planet from the Sun and the largest in the Solar System.
+                  It is a gas giant with a mass two and a half times that of all the other
+                  planets in the Solar System combined, but less than one-thousandth the mass
+                  of the Sun.
+                  <div class="source-link">Source : <a class="wiki-link" href="https://en.wikipedia.org/wiki/Jupiter">Wikipedia<img class="source-arrow" src="assets/icon-source.svg"/></a></div>
+          </div>
+          <!-- Overview Content End -->
+          <!-- Internal Structure Content Start -->
+          <div class="content hidden two">
+            When the Juno arrived in 2016, it found that Jupiter has a very diffuse core
+                  that mixes into its mantle. A possible cause is an impact from a planet of
+                  about ten Earth masses a few million years after Jupiter's formation, which
+                  would have disrupted an originally solid Jovian core.
+                  <div class="source-link">Source : <a class="wiki-link" href="https://en.wikipedia.org/wiki/Jupiter#Internal_structure">Wikipedia<img class="source-arrow" src="assets/icon-source.svg"/></a></div>
+          </div>
+          <!-- Internal Structure Content End -->
+          <!-- Surface Geology Content Start -->
+          <div class="content hidden three">
+            The best known feature of Jupiter is the Great Red Spot, a persistent
+                  anticyclonic storm located 22° south of the equator. It is known to have
+                  existed since at least 1831, and possibly since 1665.
+                  <div class="source-link">Source : <a class="wiki-link" href="https://en.wikipedia.org/wiki/Jupiter#Great_Red_Spot_and_other_vortices ">Wikipedia<img class="source-arrow" src="assets/icon-source.svg"/></a></div>
+          </div>
+        </div>
+        <!-- Surface Geology Content End -->
+        <div class="content-buttons">
+          <button class="category-button active one"><span class="category-number">01</span> Overview</button>
+          <button class="category-button two"><span class="category-number">02</span>  Internal Structure</button>
+          <button class="category-button three"><span class="category-number">03</span>  Surface Geology</button>
+        </div>
+      </div>
+      <div class="wrapper facts-wrapper">
+        <div class="fact-item">
+          <div class="fact-title">Rotation Time</div>
+          <div class="fact-info">9.93 Hours</div>
+        </div>
+        <div class="fact-item">
+          <div class="fact-title">Revolution Time</div>
+          <div class="fact-info">11.86 Years</div>
+        </div>
+        <div class="fact-item">
+          <div class="fact-title">Radius</div>
+          <div class="fact-info">3,389.5 KM</div>
+        </div>
+        <div class="fact-item">
+          <div class="fact-title">Average Temp.</div>
+          <div class="fact-info">-108°c</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

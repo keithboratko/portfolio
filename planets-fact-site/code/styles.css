@@ -1,0 +1,576 @@
+/* Variables */
+:root {
+    --mercury-active: hsl(194, 48%, 49%);
+    --venus-active: hsl(33, 82%, 61%);
+    --earth-active: hsl(263, 67%, 51%);
+    --mars-active: hsl(10, 63%, 51%);
+    --jupiter-active: hsl(2, 68%, 53%);
+    --saturn-active: hsl(17, 73%, 46%);
+    --uranus-active: hsl(169, 73%, 44%);
+    --neptune-active: hsl(222, 87%, 56%);
+  }
+
+/* Styling Elements */
+body {
+    background-color: hsl(240, 67%, 8%);
+    color: white;;
+    text-transform: uppercase;
+    font-family: League Spartan;
+}
+
+.hidden {
+    display: none;
+}
+
+.hidden-image {
+    visibility: hidden;
+}
+
+.home-button, .planet-name, .fact-info {
+    font-family: Antonio;
+}
+
+.home-button {
+    font-size: 28px;
+}
+.home-button:hover {
+    color: hsl(240, 6%, 54%)
+}
+
+.planet-button {
+    font-size: 11px;
+    letter-spacing: .1em;
+    height: 100%;
+}
+
+.planet-button:hover {
+    border-top: 3px solid hsl(194, 48%, 49%);
+    margin-top: -3px;
+}
+
+.mobile-menu-button {
+    /* border: 1px solid white; */
+    background-image: url(assets/icon-hamburger.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    display: none;
+
+}
+
+.planet-name {
+    font-size: 80px;
+    padding-bottom: .5em;
+}
+
+.mobile-planet-name {
+    font-weight: 700;
+    letter-spacing: .25em;
+}
+
+.content {
+    text-transform: none;
+    letter-spacing: .05em;
+    line-height: 1.5em;
+    min-height: 145px;
+    text-align: justify;
+}
+
+.source-link {
+    padding: 2em 0;
+    color: hsl(240, 17%, 26%);
+}
+
+.wiki-link {
+    color:hsl(240, 6%, 54%)
+}
+
+.source-arrow {
+    padding-left: 1em;
+}
+
+button {
+    text-transform: uppercase;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.category-number, .fact-title {
+    color: hsl(240, 6%, 54%)
+}
+
+.category-number {
+    padding-right: 2em;
+}
+
+.category-button {
+    border: 1px solid hsl(240, 6%, 54%);
+    border-radius: 2px;
+    letter-spacing: .1em;
+    text-align: left;
+}
+
+.category-button:hover {
+    background-color: hsl(240, 17%, 26%);
+    border: 1px solid hsl(240, 17%, 26%);
+}
+
+.mercury .active {
+    background-color: hsl(194, 48%, 49%);
+    border: 1px solid hsl(194, 48%, 49%);
+}
+
+.venus .active {
+    background-color: var(--venus-active);
+    border: 1px solid var(--venus-active);
+}
+.earth .active {
+    background-color: var(--earth-active);
+    border: 1px solid var(--earth-active);
+}
+.mars .active {
+    background-color: var(--mars-active);
+    border: 1px solid var(--mars-active);
+}
+.jupiter .active {
+    background-color: var(--jupiter-active);
+    border: 1px solid var(--jupiter-active);
+}
+.saturn .active {
+    background-color: var(--saturn-active);
+    border: 1px solid var(--saturn-active);
+}
+.uranus .active {
+    background-color: var(--uranus-active);
+    border: 1px solid var(--uranus-active);
+}
+.neptune .active {
+    background-color: var(--neptune-active);
+    border: 1px solid var(--neptune-active);
+}
+
+
+.fact-title {
+    font-size: 11px;
+}
+
+.fact-item {
+    border: 1px solid hsl(240, 6%, 54%);
+    font-size: 40px;
+}
+
+.mobile-planet-menu {
+    display: none;
+    flex-direction: column;
+    width: 100vw;
+    align-items: center;
+    margin-top: 2em;
+}
+
+.mobile-planet {
+    border-top: 1px solid hsl(240, 6%, 54%);
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    padding: 1em;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mobile-circle {
+    width: 1em;
+    height: 1em;
+    border-radius: 1em;
+}
+
+.mobile-planet-info {
+    display: flex;
+    width: 50%;
+}
+
+.mobile-planet-name {
+    padding-left: 1em;
+}
+
+.mercury-circle {
+    background-color: hsl(194, 48%, 49%);
+}
+.venus-circle {
+    background-color: hsl(33, 82%, 61%);
+}
+.earth-circle {
+    background-color: hsl(263, 67%, 51%);
+}
+.mars-circle {
+    background-color: hsl(10, 63%, 51%);
+}
+.jupiter-circle {
+    background-color: var(--jupiter-active);
+}
+.saturn-circle {
+    background-color: hsl(17, 73%, 46%);
+}
+.uranus-circle {
+    background-color: hsl(169, 73%, 44%);
+}
+.neptune-circle {
+    background-color: hsl(222, 87%, 56%);
+}
+
+.arrow-container {
+    background-image: url(assets/icon-chevron.svg);
+    height: 1em;
+    width: 1em;
+    background-repeat: no-repeat;
+}
+/* Sizing Elements */
+
+.wrap-wrap {
+    display: flex;
+    justify-content: center;
+}
+
+.main-flex-wrapper {
+    height: 100vh;
+    width: 100vw;
+    max-width: 1440px;
+    /* border: 1px solid white; */
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid white; */
+}
+
+.navbar {
+    flex-direction: row;
+    justify-content: space-between;
+    /* flex-wrap: wrap; */
+    border-bottom: 1px solid hsl(240, 6%, 54%);
+    padding: .5em;
+    width: 100%;
+    /* border: 1px solid white; */
+}
+
+.main-content-wrapper {
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    /* display: none; */
+    /* border: 1px solid white; */
+}
+
+/* .main-content-wrapper > * {
+    border: 1px solid white;
+} */
+
+.image-container {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid white; */
+    justify-content: center;
+    align-items: center;
+}
+
+.planet-image {
+    margin-top: 150px;
+    /* max-width: 326px; */
+    /* border: 1px solid white; */
+}
+
+.geology {
+    scale: 40%;
+    margin-top: -150px;
+    margin-bottom: -100px;
+    /* border: 1px solid white; */
+}
+
+.saturn .geology {
+    margin-top: -300px;
+}
+
+.content-info {
+    /* border: 1px solid white; */
+    display: flex;
+    flex-flow: column;
+    width: 40%;
+    flex-basis: 50%;
+
+}
+
+.content-buttons {
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid white; */
+    width: 40%;
+}
+.facts-wrapper {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: space-around;
+    width: 100%;
+    /* display: none; */
+    /* flex-wrap: wrap; */
+}
+
+.category-button {
+    padding: 1em 0 1em 3em;
+    margin: .5em 0;
+}
+
+.fact-item {
+    padding: .5em 1.5em .75em .5em;
+    margin: .5em;
+    flex-basis: 15%;
+    /* flex: 1 1 15%; */
+    /* max-width: 15%; */
+
+}
+
+/* @media: certain screen width in px (tablet):
+    set new width for main-flex-wrapper?
+    center home-button within nav-bar above planet-buttons.
+    set content-container flex-direction to row.
+    set new dimensions, widths, etc. for fact-items and maybe facts-wrapper.
+    */
+
+@media all and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .home-button {
+        margin: 1.5em;
+    }
+
+    .planet-button {
+        padding: .75em;
+    }
+
+    .main-content-wrapper {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .image-container {
+        width: 100%;
+    }
+
+    .planet-image {
+        max-width: 50%;
+    }
+
+    .content-info, .conten-buttons {
+        padding: 2em;
+    }
+
+    /* .facts-wrapper {
+        margin: 1em;
+    } */
+
+    /* .content-container {
+        margin: 0;
+        flex-direction: row;
+        width: 100%;
+        align-items: center;
+    }
+
+    .content-container > * {
+        padding: 1em;
+    } */
+
+    .planet-name {
+        font-size: 48px;
+    }
+
+    .content {
+        font-size: 14px
+    }
+
+    .fact-item {
+        font-size: 24px;
+    }
+
+    .saturn .geology {
+        margin-top: -250px;
+    }
+}
+
+@media all and (max-width: 480px) {
+    .navbar {
+        flex-direction: row;
+        padding: 0;
+        /* border: 1px solid white; */
+    }
+
+    .home-button {
+        padding: 0;
+        margin: .75em;
+        /* border: 1px solid white; */
+    }
+    .planet-buttons {
+        display: none;
+    }
+
+    .mobile-menu-button {
+        display: flex;
+        /* border: 1px solid white; */
+        align-self: stretch;
+        width: 10%;
+    }
+
+    .content-info {
+        /* border: 1px solid white; */
+        flex: 1;
+        text-align: center;
+    }
+
+
+    .content-buttons {
+        order: 1;
+        flex-direction: row;
+        justify-content: center;
+        /* border-bottom: 1px solid hsl(240, 6%, 54%); */
+        width: 100%;
+    }
+
+    .category-button {
+        margin-top: 1em;
+        padding: 1em;
+        text-align: center;
+        border: none;
+        border-radius: 0;
+        flex: 1;
+        border-bottom: 3px solid hsl(240, 67%, 8%);
+    }
+
+    .category-button:hover {
+        border: none;
+        background: none;
+    }
+
+    .mercury .category-button:hover {
+        border-bottom: 3px solid var(--mercury-active);
+    }
+
+    .mercury .active {
+        border: none;
+        background: none;
+        border-bottom: 3px solid var(--mercury-active);
+    }
+
+    .venus .category-button:hover {
+        border-bottom: 3px solid var(--venus-active);
+    }
+
+    .venus .active {
+        border: none;
+        background: none;
+        border-bottom: 3px solid var(--venus-active);
+    }
+
+    .earth .category-button:hover {
+        border-bottom: 3px solid var(--earth-active);
+    }
+
+    .earth .active {
+        border: none;
+        background: none;
+        border-bottom: 3px solid var(--earth-active);
+    }
+
+    .mars .category-button:hover {
+        border-bottom: 3px solid var(--mars-active);
+    }
+
+    .mars .active {
+        border: none;
+        background: none;
+        border-bottom: 3px solid var(--mars-active);
+    }
+
+    .jupiter .category-button:hover {
+        border-bottom: 3px solid var(--jupiter-active);
+    }
+
+    .jupiter .active {
+        border: none;
+        background: none;
+        border-bottom: 3px solid var(--jupiter-active);
+    }
+
+    .saturn .category-button:hover {
+        border-bottom: 3px solid var(--saturn-active);
+    }
+
+    .saturn .active {
+        border: none;
+        background: none;
+        border-bottom: 3px solid var(--saturn-active);
+    }
+
+    .uranus .category-button:hover {
+        border-bottom: 3px solid var(--uranus-active);
+    }
+
+    .uranus .active {
+        border: none;
+        background: none;
+        border-bottom: 3px solid var(--uranus-active);
+    }
+
+    .neptune .category-button:hover {
+        border-bottom: 3px solid var(--neptune-active);
+    }
+
+    .neptune .active {
+        border-bottom: 3px solid var(--neptune-active);
+    }
+
+    .category-number {
+        display: none;
+    }
+
+    .image-container {
+        order: 2;
+    }
+
+    .content-info {
+        order: 3;
+    }
+
+    .facts-wrapper {
+        flex-direction: column;
+    }
+
+    .fact-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .saturn .geology {
+        margin-top: -200px;
+    }
+}
+
+/* I have to set main-content-wrapper to just 
+display: flex
+flex-direction: column
+flex-wrap: wrap;
+
+image-container:
+flex: 1;
+
+@media for tablet:
+
+main-content-container:
+flex-direction: row;
+ */

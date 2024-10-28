@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="styles.css">
+  <script src="scripts.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Tic Tac Toe</title>
+</head>
+<body>
+<div class="wrapper main-wrapper">
+  
+    <!-- New game menu start -->
+
+  <div class="wrapper new-game-menu">
+      <div class="menu-item image-container">
+        <img src="assets/logo.svg">
+      </div>
+      <div class="wrapper menu-item team-choice">
+        <div class="item-item prompt">Pick player 1's mark</div>
+        <div class="item-item wrapper team-choice-buttons">
+          <button class="team-button team-x"></button>
+          <button class="team-button team-o"></button>
+        </div>
+        <div class="item-item reminder">Remember: X goes first</div>
+      </div>
+      <div class="wrapper menu-item opponent-choice-buttons">
+        <button class="opponent-choice cpu">New Game (vs CPU)</button>
+        <button class="opponent-choice player">New Game (vs player)</button>
+      </div>
+  </div>
+
+    <!-- New game menu end -->
+  
+    <!-- Game board start -->
+  
+    <div class="wrapper game-board">
+      
+      <div class="wrapper top-banner">
+        <div class="banner-logo-container">
+          <img class="banner-logo" src="assets/logo.svg">
+        </div>
+        <div class="turn-container">
+          <img class="turn-logo" src="assets/icon-x.svg">
+          <div class="turn">turn</div>
+        </div>
+        <div class="restart-button-container">
+          <button class="restart-button"></button>
+        </div>
+      </div>
+      <div class="wrapper game-grid">
+        <div class="game-box box1"></div>
+        <div class="game-box box2"></div>
+        <div class="game-box box3"></div>
+        <div class="game-box box4"></div>
+        <div class="game-box box5"></div>
+        <div class="game-box box6"></div>
+        <div class="game-box box7"></div>
+        <div class="game-box box8"></div>
+        <div class="game-box box9"></div>
+      </div>
+      <div class="wrapper bottom-banner">
+        <div class="score-x-item">
+          <div class="item-text score-text">X (You!)</div>
+          <div class="count score-x">0</div>
+        </div>
+        <div class="ties-item">
+          <div class="item-text ties-text">Ties</div>
+          <div class="count ties">0</div>
+        </div>
+        <div class="score-o-item">
+          <div class="item-text score-text">O (CPU)</div>
+          <div class="count score-o">0</div>
+        </div>
+      </div>
+    </div>
+      <div class="end-of-round">
+        <div class="decision-item decision-text">
+          <div class="loss">Oh no, you lost</div>
+          <div class="win">You won!</div>
+          <div class="player-win">Player <div class="player-number"></div> wins!</div>
+        </div>
+        <div class="decision-item decision-info">
+          <div class="winning-team">
+            <div class="image-container"></div> 
+            <div class="win-text-container">takes the round</div>
+          </div>
+          <div class="tie-game">Round tied</div>
+        </div>
+        <div class="decision-item round-decision-buttons-container">
+          <button class="quit-button">Quit</button>
+          <button class="next-round-button">Next round</button>
+        </div>
+        <div class="restart-menu">
+          <div class="prompt">Restart game?</div>
+          <div class="restart-menu-buttons-container">
+            <button class="cancel">No, cancel</button>
+            <button class="confirm-restart">Yes, restart</button>
+          </div>
+        </div>
+      </div>
+    <!-- Game board end -->
+
+</div>
+
+</body>
+</html>
