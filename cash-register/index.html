@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="scripts.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<body>
+    <div class="description">
+        Welcome to Cash Register! <br><br>
+        
+        Fill out the input fields, where "Price" is the price of an item, "Cash" is the amount used to pay for the item, and each specific denomination amount tallies the total amount of each specific denomination (e.g. 100 pennies in register = "1.00", 2 quarters in register = "0.5"). If the total amount for a denomination is less than 1, be sure to express the value as "0.__". <br><br>
+
+        When submitted, a function will run to calculate appropriate change (in the most efficient way) if possible, and returns an array displaying the change made, as well as whether or not the register is "Open" or "Closed" after this purchase. <br><br>
+
+        If making change is not possible because either a) the register total is less than the change needed, or b) making change for the amount needed is not possible with the denominational breakdown of the register, the function will return a status of "INSUFFICIENT FUNDS", followed by an empty array. <br><br>
+
+
+    </div>
+    <div class="flex-wrapper">
+        <div class="header">Cash Register</div>
+        <div class="input-wrapper">
+            <div class="money-sign">$</div>
+            <input type="text" class="cash" id="price" placeholder="ex. 35">
+            <div class="label">Price</div>
+        </div>
+        <div class="input-wrapper">
+            <div class="money-sign">$</div>
+            <input type="text" class="cash" id="cash" placeholder="ex. 100">
+            <div class="label">Cash</div>
+        </div>
+        <div class="input-wrapper">
+            <div class="money-sign">$</div>
+            <input type="text" class="cash-drawer" id="hundred" placeholder="ex. 200">
+            <div class="label">Hundreds</div>
+        </div>
+        <div class="input-wrapper">
+            <div class="money-sign">$</div>
+            <input type="text" class="cash-drawer" id="twenty" placeholder="ex. 60">
+            <div class="label">Twenties</div>
+        </div>
+        <div class="input-wrapper">
+            <div class="money-sign">$</div>
+            <input type="text" class="cash-drawer" id="ten" placeholder="ex. 30">
+            <div class="label">Tens</div>
+        </div>
+        <div class="input-wrapper">
+            <div class="money-sign">$</div>
+            <input type="text" class="cash-drawer" id="five" placeholder="ex. 15">
+            <div class="label">Fives</div>
+        </div>
+        <div class="input-wrapper">
+            <div class="money-sign">$</div>
+            <input type="text" class="cash-drawer" id="one" placeholder="ex. 28">
+            <div class="label">Ones</div>
+        </div>
+        <div class="input-wrapper">
+            <div class="money-sign">$</div>
+            <input type="text" class="cash-drawer" id="quarter" placeholder="ex. 1.75">
+            <div class="label">Quarters</div>
+        </div>
+        <div class="input-wrapper">
+            <div class="money-sign">$</div>
+            <input type="text" class="cash-drawer" id="dime" placeholder="ex. 0.70">
+            <div class="label">Dimes</div>
+        </div>
+        <div class="input-wrapper">
+            <div class="money-sign">$</div>
+            <input type="text" class="cash-drawer" id="nickel" placeholder="ex. 0.65">
+            <div class="label">Nickels</div>
+        </div>
+        <div class="input-wrapper">
+            <div class="money-sign">$</div>
+            <input type="text" class="cash-drawer" id="penny" placeholder="ex. 1.04">
+            <div class="label">Pennies</div>
+        </div>
+        <button type="submit" class="submit-button">Submit</button>
+    </div>
+    <div class="result"></div>
+</body>
+</html>
