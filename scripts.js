@@ -41,8 +41,21 @@ function projectSelect() {
 
   }
 
+  function removeHidden() {
+    if (window.innerWidth >= 480) {
+      document.querySelecotrAll("a").forEach((link) => {
+        if (link.classList.contains("hidden")) {
+          link.classList.remove("hidden");
+        }
+
+      }) 
+      
+    }
+  }
+
 document.addEventListener("DOMContentLoaded", (event) => {
   projectSelect();
   // verifyInput();
   openInNewTab();
+  removeHidden();
 });
