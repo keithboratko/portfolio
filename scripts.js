@@ -1,5 +1,13 @@
 function projectSelect() {
   document.querySelectorAll(".project").forEach((project) => {
+    if (window.innerWidth >= 480) {
+      querySelectorAll("a").forEach((link) => {
+        if (link.classList.contains("hidden")) {
+          link.classList.remove("hidden");
+        }
+      })
+      
+    }
     project.addEventListener("mouseover", () => {
       project.querySelectorAll("a").forEach((link) => {
         link.classList.remove("hidden");
@@ -41,21 +49,21 @@ function projectSelect() {
 
   }
 
-  function removeHidden() {
-    if (window.innerWidth >= 480) {
-      document.querySelecotrAll("a").forEach((link) => {
-        if (link.classList.contains("hidden")) {
-          link.classList.remove("hidden");
-        }
+  // function removeHidden() {
+  //   if (window.innerWidth >= 480) {
+  //     document.querySelectorAll("a").forEach((link) => {
+  //       if (link.classList.contains("hidden")) {
+  //         link.classList.remove("hidden");
+  //       }
 
-      }) 
+  //     }) 
       
-    }
-  }
+  //   }
+  // }
 
 document.addEventListener("DOMContentLoaded", (event) => {
   projectSelect();
   // verifyInput();
   openInNewTab();
-  removeHidden();
+  // removeHidden();
 });
