@@ -13,20 +13,36 @@ function projectSelect() {
   });
 }
 
-function verifyInput() {
-  document.querySelector(".send-button").addEventListener("click", () => {
-    document.querySelectorAll(".input-item").forEach((item) => {
-      if (item.querySelector("input").value == "") {
-        item.querySelector(".error-message").classList.remove("hidden");
-      }
-      if (!item.querySelector("input").checkValidity()) {
-        item.querySelector(".invalid-email").classList.remove("hidden");
-      }
-    });
-  });
-}
+// function verifyInput() {
+//   document.querySelector(".send-button").addEventListener("click", () => {
+//     document.querySelectorAll(".input-item").forEach((item) => {
+//       if (item.querySelector("input").value == "") {
+//         item.querySelector(".error-message").classList.remove("hidden");
+//       }
+//       if (!item.querySelector("input").checkValidity()) {
+//         item.querySelector(".invalid-email").classList.remove("hidden");
+//       }
+//     });
+//   });
+// }
+
+  function openInNewTab() {
+
+    document.querySelectorAll(".github-link").forEach((githubButton) => {
+      githubButton.addEventListener("click", () => {
+        window.open('https://www.github.com/keithboratko', '_blank').focus();
+      })
+    })
+    document.querySelectorAll(".linkedin-link").forEach((linkedinButton) => {
+      linkedinButton.addEventListener("click", () => {
+        window.open('https://www.linkedin.com/in/keith-boratko-7b1813337/', '_blank').focus();
+      })
+    })
+
+  }
 
 document.addEventListener("DOMContentLoaded", (event) => {
   projectSelect();
-  verifyInput();
+  // verifyInput();
+  openInNewTab();
 });

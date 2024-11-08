@@ -5,20 +5,22 @@ body {
     align-items: center;
 }
 
-/* body > * {
- border: 1px solid black;
-} */
+.body-container {
+    background-color: #e9f6f0;
+}
 
 .flex-wrapper {
     display: flex;
     flex-direction: column;
-    border: 1px solid black;
+    /* border: 1px solid black; */
+    border-radius: 10px;
     justify-content: center;
     align-items: center;
     margin: 1em 3em;
     height: 90vh;
     min-width: 500px;
     max-height: 700px; 
+    background-color: #c5e8d8;
 }
 
 .flex-wrapper > * {
@@ -34,6 +36,7 @@ body {
 .input-wrapper {
     display: flex;
     /* border: 1px solid black; */
+    margin-left: 2.5em;
 }
 
 .money-sign {
@@ -57,5 +60,27 @@ body {
 
 .submit-button {
     margin-top: 1em;
+    border-radius: 5px;
+    border: none;
+    background-color: #e9f6f0;
 }
 
+.submit-button:hover {
+    background-color: #bcdbcd;
+    color: white;
+}
+
+.label {
+    margin-left: 1em;
+}
+
+input {
+    max-width: 100px;
+    border-radius: 5px;
+    border: none;
+    background-color: #e9f6f0;
+}
+
+.result {
+    margin: 1em;
+}
