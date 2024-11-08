@@ -1,7 +1,7 @@
 function projectSelect() {
   document.querySelectorAll(".project").forEach((project) => {
     if (window.innerWidth >= 480) {
-      querySelectorAll("a").forEach((link) => {
+      document.querySelectorAll("a").forEach((link) => {
         if (link.classList.contains("hidden")) {
           link.classList.remove("hidden");
         }
