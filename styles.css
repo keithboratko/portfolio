@@ -351,12 +351,12 @@ a {
 
     .top-banner-wrap {
         background-position: top;
-        background-size: 30%;
+        background-size: 50%;
         background-position-y: 15%;
     }
 
     .callout-wrap h1 {
-        font-size: 33px;
+        font-size: 30px;
     }
 
     .circle-img {
