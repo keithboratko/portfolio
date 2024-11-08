@@ -9,6 +9,9 @@ function projectSelect() {
       
     }
     else {
+      document.querySelectorAll(".project a").forEach((link) => {
+        link.classList.add("hidden");
+      })
       project.addEventListener("mouseover", () => {
         project.querySelectorAll("a").forEach((link) => {
           link.classList.remove("hidden");
