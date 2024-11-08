@@ -8,16 +8,18 @@ function projectSelect() {
       })
       
     }
-    project.addEventListener("mouseover", () => {
-      project.querySelectorAll("a").forEach((link) => {
-        link.classList.remove("hidden");
+    else {
+      project.addEventListener("mouseover", () => {
+        project.querySelectorAll("a").forEach((link) => {
+          link.classList.remove("hidden");
+        });
       });
-    });
-    project.addEventListener("mouseout", () => {
-      project.querySelectorAll("a").forEach((link) => {
-        link.classList.add("hidden");
+      project.addEventListener("mouseout", () => {
+        project.querySelectorAll("a").forEach((link) => {
+          link.classList.add("hidden");
+        });
       });
-    });
+    }
   });
 }
 
