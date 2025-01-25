@@ -321,7 +321,7 @@ Specific Styles
 }
 
 .opponent-active {
-    display: flex;
+    /* display: flex; */
 }
 
 .opponent-choice-buttons {
