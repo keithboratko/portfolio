@@ -128,11 +128,10 @@ Containers
     /* border: 1px solid white; */
     width: 360px;
     height: 667px;
+    position: relative;
 }
 
-.end-of-round {
-    display: none;
-}
+
 
 /* .opponent-choice-buttons {
     flex-direction: row;
@@ -192,9 +191,9 @@ Containers
     height: 25%;
     align-items: center;
     justify-content: center;
-    margin: 0 0 0 -100%;
     z-index: 2;
     background-color: var(--bg-main);
+    position: absolute;
 }
 
 .end-of-round > * {

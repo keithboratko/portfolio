@@ -189,7 +189,7 @@ function boxFill() {
                 if (turn == "x" && document.querySelector(".active").classList.contains("team-o")) {
                     console.log("CPU's Turn");
                     console.log("empty boxes cpu turn start", empty_boxes);
-                    // setTimeout(() => {
+                    setTimeout(() => {
                         var cpu_choice = empty_boxes[(Math.floor(Math.random() * empty_boxes.length))];
                         cpu_choice.classList.add("x-filled");
                         turn = "o";
@@ -197,12 +197,12 @@ function boxFill() {
                         var box_index = empty_boxes.indexOf(cpu_choice);
                         empty_boxes.splice(box_index, 1);
                         console.log("empty boxes cpu turn end", empty_boxes);
-                    // }, 3000);
+                    }, 2000);
                 }
                 else if (turn == "o" && document.querySelector(".active").classList.contains("team-x")) {
                     console.log("CPU's Turn");
                     console.log("empty boxes cpu turn start", empty_boxes);
-                    // setTimeout(() => {
+                    setTimeout(() => {
                         var cpu_choice = empty_boxes[(Math.floor(Math.random() * empty_boxes.length))];
                         cpu_choice.classList.add("o-filled");
                         turn = "x";
@@ -210,7 +210,7 @@ function boxFill() {
                         var box_index = empty_boxes.indexOf(cpu_choice);
                         empty_boxes.splice(box_index, 1);
                         console.log("empty boxes cpu turn end:", empty_boxes);
-                    // }, 3000);
+                    }, 2000);
                 }
             }
         })
