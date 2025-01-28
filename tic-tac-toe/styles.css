@@ -315,6 +315,7 @@ Specific Styles
     border: none;
     cursor: pointer;
     margin: 1em 0;
+    color: black;
 
     /* border: none; */
 }
