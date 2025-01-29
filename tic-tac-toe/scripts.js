@@ -152,28 +152,25 @@ function boxFill() {
             // If it is X's turn, fill box with the x-icon, change turn to "o". //
 
             if (document.querySelector(".opponent-active").classList.contains("player")) {
+                
+                // Refactor: Use template literals to handle box-filling logic, inputting the turn variable to determine which images and classes to fill and assign.
+                box.classList.add(`${turn}-filled`);
                 if (turn == "x") {
-                    box.classList.add("x-filled");
                     turn = "o";
-                    document.querySelector(".turn-logo").src = "assets/icon-o.svg";
-                    var box_index = empty_boxes.indexOf(box);
-                    empty_boxes.splice(box_index, 1);
                 }
-    
-                // Else if it is O's turn, fill box with the o-icon, change turn to "x". //
-                else if (turn == "o") {
-                    box.classList.add("o-filled");
+                else {
                     turn = "x";
-                    document.querySelector(".turn-logo").src = "assets/icon-x.svg";
-                    var box_index = empty_boxes.indexOf(box);
-                    empty_boxes.splice(box_index, 1);
                 }
+                document.querySelector(".turn-logo").src = `assets/icon-${turn}.svg`;
+                var box_index = empty_boxes.indexOf(box);
+                empty_boxes.splice(box_index, 1);
+
             }
 
             else if (document.querySelector(".opponent-active").classList.contains("cpu")) {
                 document.querySelectorAll(".game-box").forEach((box) => {
                     console.log("turning off pointer events");
-                    box.style.pointerEvents = "none !important";
+                    box.style.pointerEvents = "none";
                 })
                 if (turn == "x" && document.querySelector(".active").classList.contains("team-x")) {
                     box.classList.add("x-filled");
@@ -195,8 +192,13 @@ function boxFill() {
                     console.log("empty boxes cpu turn start", empty_boxes);
 
                     setTimeout(() => {
+                        document.querySelectorAll(".game-box").forEach((box) => {
+                            console.log("turning off pointer events");
+                            box.style.classList.add();
+                        })
                         var cpu_choice = empty_boxes[(Math.floor(Math.random() * empty_boxes.length))];
                         cpu_choice.classList.add("x-filled");
+                        cpu_choice.click(); // This will be used to simply fire the boxFill logic, triggering the CPU to click.
                         turn = "o";
                         document.querySelector(".turn-logo").src = "assets/icon-o.svg";
                         var box_index = empty_boxes.indexOf(cpu_choice);
@@ -214,6 +216,7 @@ function boxFill() {
                     setTimeout(() => {
                         var cpu_choice = empty_boxes[(Math.floor(Math.random() * empty_boxes.length))];
                         cpu_choice.classList.add("o-filled");
+                        cpu_choice.click(); // This will be used to simply fire the boxFill logic, triggering the CPU to click.
                         turn = "x";
                         document.querySelector(".turn-logo").src = "assets/icon-x.svg";
                         var box_index = empty_boxes.indexOf(cpu_choice);
