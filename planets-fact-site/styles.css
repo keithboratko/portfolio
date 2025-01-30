@@ -278,6 +278,10 @@ button {
     align-items: center;
 }
 
+.locked {
+    pointer-events: none;
+}
+
 .planet-image {
     margin-top: 150px;
     /* max-width: 326px; */
