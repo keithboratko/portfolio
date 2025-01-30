@@ -259,6 +259,13 @@ function boxFill() {
                     console.log("CPU's Turn");
                     console.log("empty boxes cpu turn start", empty_boxes);
                     setTimeout(() => {
+                        if (game0ver) {
+                            document.querySelectorAll(".game-box").forEach((box) => {
+                                console.log("turning on pointer events");
+                                box.style.pointerEvents = "auto";
+                            })
+                            return;
+                        }
                         var cpu_choice = empty_boxes[(Math.floor(Math.random() * empty_boxes.length))];
                         cpu_choice.classList.add(`${turn}-filled`);
                         cpu_choice.click(); // This will be used to simply fire the boxFill logic, triggering the CPU to click.
@@ -308,6 +315,8 @@ function boxFill() {
     })
 }
 
+let game0ver = false;
+
 // Checks game-board against win cases, tallies wins and ties. //
 function winCheck() {
 
@@ -343,6 +352,8 @@ function winCheck() {
             */
 
             if ((box1.classList.contains("x-filled") && box2.classList.contains("x-filled") && box3.classList.contains("x-filled")) || (box4.classList.contains("x-filled") && box5.classList.contains("x-filled") && box6.classList.contains("x-filled")) || (box7.classList.contains("x-filled") && box8.classList.contains("x-filled") && box9.classList.contains("x-filled")) || (box1.classList.contains("x-filled") && box4.classList.contains("x-filled") && box7.classList.contains("x-filled")) || (box2.classList.contains("x-filled") && box5.classList.contains("x-filled") && box8.classList.contains("x-filled")) || (box3.classList.contains("x-filled") && box6.classList.contains("x-filled") && box9.classList.contains("x-filled")) || (box1.classList.contains("x-filled") && box5.classList.contains("x-filled") && box9.classList.contains("x-filled")) || (box3.classList.contains("x-filled") && box5.classList.contains("x-filled") && box7.classList.contains("x-filled"))) {
+
+                game0ver = true;
 
                 // Display end-of-round container. //
                 document.querySelector(".end-of-round").style.display = "flex";
@@ -383,6 +394,9 @@ function winCheck() {
                 -Diagonal Right, Diagonal Left
             */
             else if ((box1.classList.contains("o-filled") && box2.classList.contains("o-filled") && box3.classList.contains("o-filled")) || (box4.classList.contains("o-filled") && box5.classList.contains("o-filled") && box6.classList.contains("o-filled")) || (box7.classList.contains("o-filled") && box8.classList.contains("o-filled") && box9.classList.contains("o-filled")) || (box1.classList.contains("o-filled") && box4.classList.contains("o-filled") && box7.classList.contains("o-filled")) || (box2.classList.contains("o-filled") && box5.classList.contains("o-filled") && box8.classList.contains("o-filled")) || (box3.classList.contains("o-filled") && box6.classList.contains("o-filled") && box9.classList.contains("o-filled")) || (box1.classList.contains("o-filled") && box5.classList.contains("o-filled") && box9.classList.contains("o-filled")) || (box3.classList.contains("o-filled") && box5.classList.contains("o-filled") && box7.classList.contains("o-filled"))) {
+
+                game0ver = true;
+
                 // Display end-of-round container. //
                 document.querySelector(".end-of-round").style.display = "flex";
                 document.querySelector(".game-board").style.filter = "brightness(50%)";
@@ -420,6 +434,9 @@ function winCheck() {
             */
 
             else if ((box1.classList.contains("x-filled") || box1.classList.contains("o-filled")) && (box2.classList.contains("x-filled") || box2.classList.contains("o-filled")) && (box3.classList.contains("x-filled") || box3.classList.contains("o-filled")) && (box4.classList.contains("x-filled") || box4.classList.contains("o-filled")) && (box5.classList.contains("x-filled") || box5.classList.contains("o-filled")) && (box6.classList.contains("x-filled") || box6.classList.contains("o-filled")) && (box7.classList.contains("x-filled") || box7.classList.contains("o-filled")) && (box8.classList.contains("x-filled") || box8.classList.contains("o-filled")) && (box9.classList.contains("x-filled") || box9.classList.contains("o-filled"))) {
+
+                game0ver = true;
+
                 // Display end-of-round container. //
                 document.querySelector(".end-of-round").style.display = "flex";
                 document.querySelector(".game-board").style.filter = "brightness(50%)";
@@ -459,6 +476,7 @@ function menuTraverse() {
 
     // When quit-button is clicked, revert display back to new-game-menu. (Remove all fills from game-boxes, remove active class from team-button, reset turn-logo icon to x-icon.)
     document.querySelector(".quit-button").addEventListener("click", () => {
+        game0ver = false;
         document.querySelector(".end-of-round").style.display = "none";
         document.querySelector(".game-board").style.filter = "brightness(100%)";
         document.querySelector(".game-board").style.display = "none";
@@ -473,6 +491,7 @@ function menuTraverse() {
                 box.classList.remove("o-filled");
             }
             document.querySelector(".turn-logo").src = "assets/icon-x.svg";
+            box.style.pointerEvents = "auto";
         })
         console.log("new round started");
 
@@ -480,6 +499,7 @@ function menuTraverse() {
 
     // When next-round-button clicked, revert display to emptied game-board, reset turn-logo icon to x-icon.
     document.querySelector(".next-round-button").addEventListener("click", () => {
+        game0ver = false;
         console.log("next round clicked");
         document.querySelector(".game-board").style.filter = "brightness(100%)";
         document.querySelector(".end-of-round").style.display = "none";
@@ -491,6 +511,7 @@ function menuTraverse() {
                 box.classList.remove("o-filled");
             }
             document.querySelector(".turn-logo").src = "assets/icon-x.svg";
+            box.style.pointerEvents = "auto";
         })
         console.log("new round started");
 
