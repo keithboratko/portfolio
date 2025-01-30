@@ -178,7 +178,7 @@ function boxFill() {
             }
 
             else if (document.querySelector(".opponent-active").classList.contains("cpu")) {
-                if (empty_boxes.length == 0) {
+                if (empty_boxes.length == 0 || game0ver) {
                     return;
                 }
                 document.querySelectorAll(".game-box").forEach((box) => {
