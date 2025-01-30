@@ -130,19 +130,28 @@ function restartClick() {
 function boxFill() {
 
     // Initialize turn variable, iterate over each box. //
-    var turn;
+    var turn = "x";
     var empty_boxes = [];
     document.querySelectorAll(".game-box").forEach((box) => {
         if (!box.classList.contains("x-filled") && !box.classList.contains("o-filled")) {
             empty_boxes.push(box);
             console.log(empty_boxes);
+            // if (document.querySelector(".active").classList.contains(`team-${turn}`)) {
+            //     // box.addEventListener("mouseover", () => {
+            //     //     box.style.backgroundImage = `assets/icon-${turn}-outline.svg`;
+            //     // })
+            //     // box.addEventListener("mouseout", () => {
+            //     //     box.style.backgroundImage = "none";
+            //     // })
+            // }
         }
+        
         box.addEventListener("click", () => {
 
             // Set turn to X for first turn. //
-            if (turn == null) {
-                turn = "x";
-            }
+            // if (turn == null) {
+            //     turn = "x";
+            // }
 
             //Check if box is already filled - if so, do break. //
             if (box.classList.contains("x-filled") || box.classList.contains("o-filled")) {
@@ -154,6 +163,7 @@ function boxFill() {
             if (document.querySelector(".opponent-active").classList.contains("player")) {
                 
                 // Refactor: Use template literals to handle box-filling logic, inputting the turn variable to determine which images and classes to fill and assign.
+
                 box.classList.add(`${turn}-filled`);
                 if (turn == "x") {
                     turn = "o";
@@ -168,57 +178,97 @@ function boxFill() {
             }
 
             else if (document.querySelector(".opponent-active").classList.contains("cpu")) {
+                if (empty_boxes.length == 0) {
+                    return;
+                }
                 document.querySelectorAll(".game-box").forEach((box) => {
                     console.log("turning off pointer events");
                     box.style.pointerEvents = "none";
                 })
-                if (turn == "x" && document.querySelector(".active").classList.contains("team-x")) {
-                    box.classList.add("x-filled");
-                    turn = "o";
-                    document.querySelector(".turn-logo").src = "assets/icon-o.svg";
-                    var box_index = empty_boxes.indexOf(box);
-                    empty_boxes.splice(box_index, 1);
-                }
-                else if (turn == "o" && document.querySelector(".active").classList.contains("team-o")) {
-                    box.classList.add("o-filled");
-                    turn = "x";
-                    document.querySelector(".turn-logo").src = "assets/icon-x.svg";
-                    var box_index = empty_boxes.indexOf(box);
-                    empty_boxes.splice(box_index, 1);
-                }
-
-                if (turn == "x" && document.querySelector(".active").classList.contains("team-o")) {
-                    console.log("CPU's Turn");
-                    console.log("empty boxes cpu turn start", empty_boxes);
-
-                    setTimeout(() => {
-                        document.querySelectorAll(".game-box").forEach((box) => {
-                            console.log("turning off pointer events");
-                            box.style.classList.add();
-                        })
-                        var cpu_choice = empty_boxes[(Math.floor(Math.random() * empty_boxes.length))];
-                        cpu_choice.classList.add("x-filled");
-                        cpu_choice.click(); // This will be used to simply fire the boxFill logic, triggering the CPU to click.
+                // if (turn == "x" && document.querySelector(".active").classList.contains("team-x")) {
+                //     box.classList.add("x-filled");
+                //     turn = "o";
+                //     document.querySelector(".turn-logo").src = "assets/icon-o.svg";
+                //     var box_index = empty_boxes.indexOf(box);
+                //     empty_boxes.splice(box_index, 1);
+                // }
+                // else if (turn == "o" && document.querySelector(".active").classList.contains("team-o")) {
+                //     box.classList.add("o-filled");
+                //     turn = "x";
+                //     document.querySelector(".turn-logo").src = "assets/icon-x.svg";
+                //     var box_index = empty_boxes.indexOf(box);
+                //     empty_boxes.splice(box_index, 1);
+                // }
+                
+                // Refactor: Use template literals to handle box-filling logic, inputting the turn variable to determine which images and classes to fill and assign.
+                
+                if (document.querySelector(".active").classList.contains(`team-${turn}`)) {
+                    box.classList.add(`${turn}-filled`);
+                    if (turn == "x") {
                         turn = "o";
-                        document.querySelector(".turn-logo").src = "assets/icon-o.svg";
-                        var box_index = empty_boxes.indexOf(cpu_choice);
-                        empty_boxes.splice(box_index, 1);
-                        console.log("empty boxes cpu turn end", empty_boxes);
-                        document.querySelectorAll(".game-box").forEach((box) => {
-                            console.log("turning on pointer events");
-                            box.style.pointerEvents = "auto";
-                        })
-                    }, 2000);
+                    }
+                    else {
+                        turn = "x";
+                    }
+                    document.querySelector(".turn-logo").src = `assets/icon-${turn}.svg`;
+                    var box_index = empty_boxes.indexOf(box);
+                    empty_boxes.splice(box_index, 1);
                 }
-                else if (turn == "o" && document.querySelector(".active").classList.contains("team-x")) {
+
+                // if (turn == "x" && document.querySelector(".active").classList.contains("team-o")) {
+                //     console.log("CPU's Turn");
+                //     console.log("empty boxes cpu turn start", empty_boxes);
+
+                //     setTimeout(() => {
+                //         var cpu_choice = empty_boxes[(Math.floor(Math.random() * empty_boxes.length))];
+                //         cpu_choice.classList.add("x-filled");
+                //         cpu_choice.click(); // This will be used to simply fire the boxFill logic, triggering the CPU to click.
+                //         turn = "o";
+                //         document.querySelector(".turn-logo").src = "assets/icon-o.svg";
+                //         var box_index = empty_boxes.indexOf(cpu_choice);
+                //         empty_boxes.splice(box_index, 1);
+                //         console.log("empty boxes cpu turn end", empty_boxes);
+                //         document.querySelectorAll(".game-box").forEach((box) => {
+                //             console.log("turning on pointer events");
+                //             box.style.pointerEvents = "auto";
+                //         })
+                //     }, 1000);
+                // }
+                // else if (turn == "o" && document.querySelector(".active").classList.contains("team-x")) {
+                //     console.log("CPU's Turn");
+                //     console.log("empty boxes cpu turn start", empty_boxes);
+                //     setTimeout(() => {
+                //         var cpu_choice = empty_boxes[(Math.floor(Math.random() * empty_boxes.length))];
+                //         cpu_choice.classList.add("o-filled");
+                //         cpu_choice.click(); // This will be used to simply fire the boxFill logic, triggering the CPU to click.
+                //         turn = "x";
+                //         document.querySelector(".turn-logo").src = "assets/icon-x.svg";
+                //         var box_index = empty_boxes.indexOf(cpu_choice);
+                //         empty_boxes.splice(box_index, 1);
+                //         console.log("empty boxes cpu turn end:", empty_boxes);
+                //         document.querySelectorAll(".game-box").forEach((box) => {
+                //             console.log("turning on pointer events");
+                //             box.style.pointerEvents = "auto";
+                //         })
+                //     }, 1000);
+                // }
+
+                // Refactor: Use template literals to handle box-filling logic, inputting the turn variable to determine which images and classes to fill and assign.
+
+                if (!document.querySelector(".active").classList.contains(`team-${turn}`)) {
                     console.log("CPU's Turn");
                     console.log("empty boxes cpu turn start", empty_boxes);
                     setTimeout(() => {
                         var cpu_choice = empty_boxes[(Math.floor(Math.random() * empty_boxes.length))];
-                        cpu_choice.classList.add("o-filled");
+                        cpu_choice.classList.add(`${turn}-filled`);
                         cpu_choice.click(); // This will be used to simply fire the boxFill logic, triggering the CPU to click.
-                        turn = "x";
-                        document.querySelector(".turn-logo").src = "assets/icon-x.svg";
+                        if (turn == "x") {
+                            turn = "o";
+                        }
+                        else {
+                            turn = "x";
+                        }
+                        document.querySelector(".turn-logo").src = `assets/icon-${turn}.svg`;
                         var box_index = empty_boxes.indexOf(cpu_choice);
                         empty_boxes.splice(box_index, 1);
                         console.log("empty boxes cpu turn end:", empty_boxes);
@@ -226,7 +276,7 @@ function boxFill() {
                             console.log("turning on pointer events");
                             box.style.pointerEvents = "auto";
                         })
-                    }, 2000);
+                    }, 1000);
                 }
             }
         })
@@ -298,7 +348,7 @@ function winCheck() {
                 document.querySelector(".end-of-round").style.display = "flex";
                 document.querySelector(".game-board").style.filter = "brightness(50%)";
 
-
+                
                 // If player 1 is team O, display win decision for player 2. //
                 if (document.querySelector(".active").classList.contains("team-o")) {
                     document.querySelector(".player-win").style.display = "flex";
